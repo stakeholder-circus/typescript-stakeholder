@@ -301,3 +301,6 @@ $RECYCLE.BIN/
 # stakeholder-circus governance baseline
 .direnv/
 .result/
+
+node_modules/
+dist/
