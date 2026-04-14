@@ -1,5 +1,5 @@
-# Rust Language Specialties
+# TypeScript Language Specialties
 
-- Rust is the canonical scheduler and generator baseline.
-- Shared domain concepts are modeled explicitly so follower languages can port stable semantics instead of re-deriving them.
-- Rust remains the reference for deterministic seeded behavior and normalized JSON semantics.
+- Repo-local `pnpm` and `tsc` keep the tranche self-contained without global TypeScript assumptions.
+- Node ESM output keeps the CLI and test runner aligned across host and Docker paths.
+- Stable object construction order is used so normalized JSON remains snapshot-comparable.

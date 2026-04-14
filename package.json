@@ -1,13 +1,18 @@
 {
   "name": "typescript-stakeholder",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@10.15.0",
   "scripts": {
+    "format": "prettier --check src test package.json tsconfig.json",
+    "format:write": "prettier --write src test package.json tsconfig.json",
     "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test dist/test/runtime.test.js"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "@types/node": "^24.7.2"
+    "@types/node": "^24.7.2",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
   }
 }

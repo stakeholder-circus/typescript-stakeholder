@@ -1,6 +1,6 @@
-# Rust Edge Cases
+# TypeScript Edge Cases
 
-- Seeded JSON runs must remain deterministic.
-- `alerts` and `team` act as injections into the scheduler, not alternate modes.
-- Healthcare, charging, protocol, and quantum families should only enter plans when dev type or keyword routing makes them eligible.
-- Experimental live-provider concepts must not affect default deterministic output.
+- Same-seed JSON output must remain byte-stable for the same `focus-family`.
+- `focus-family` is required unless `--list-values` is used.
+- Later families must emit grouped fallback renderer keys, not placeholder dedicated renderers.
+- Experimental flags must not change deterministic output unless a provider is explicitly requested.

@@ -1,5 +1,5 @@
 {
-  description = "typescript-stakeholder scaffold";
+  description = "typescript-stakeholder deterministic first tranche";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
   outputs = { self, nixpkgs }:
     let
@@ -11,9 +11,15 @@
         in {
           check = pkgs.writeShellApplication {
             name = "check";
-            runtimeInputs = [ pkgs.python3 ];
+            runtimeInputs = [ pkgs.nodejs_22 pkgs.nodePackages.pnpm pkgs.python3 ];
             text = ''
+              export HOME="$PWD/.nix-home"
+              mkdir -p "$HOME"
               python3 scripts/validate_scaffold.py
+              pnpm install --frozen-lockfile
+              pnpm run format
+              pnpm run build
+              pnpm run test
             '';
           };
           default = self.packages.${system}.check;

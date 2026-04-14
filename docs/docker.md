@@ -1,9 +1,10 @@
-# Rust Docker
+# TypeScript Docker
 
-## Build and test
-- `docker build -t rust-stakeholder .`
-- `docker run --rm rust-stakeholder --list-values`
+## Build and smoke
+- `docker build -t typescript-stakeholder .`
+- `docker run --rm typescript-stakeholder --list-values`
+- `docker run --rm typescript-stakeholder --focus-family delivery_preview_ops --output-format json --seed smoke`
 
 ## Rationale
-- The image compiles and tests the Rust baseline before packaging the runtime binary.
-- Docker is the reproducible Linux gate; host and CI matrices still cover native OS behavior.
+- The image runs formatter, build, and tests during the build stage.
+- Docker is the portable Linux gate for this tranche.

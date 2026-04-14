@@ -2,5 +2,5 @@
 - Default branch: `main`
 - Origin: `git@github.com:stakeholder-circus/typescript-stakeholder.git`
 - Upstream: `https://github.com/giacomo-b/rust-stakeholder`
-- Role: local-only next-20 scaffold
-- Provenance model: imported Rust history retained with derivative scaffold content layered on top
+- Role: local-only deterministic first tranche for TypeScript
+- Provenance model: imported Rust history retained with derivative TypeScript implementation layered on top

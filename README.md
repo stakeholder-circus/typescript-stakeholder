@@ -1,34 +1,38 @@
 > [!WARNING]
-> This repository is AI-assisted and manually reviewed. It is currently a local-only scaffold in the next-20 autonomous sprint.
+> This repository is AI-assisted and manually reviewed. It is a local-only deterministic TypeScript tranche and is not published yet.
 
 # typescript-stakeholder
 
-TypeScript scaffold under stakeholder-circus.
+TypeScript deterministic parity port under stakeholder-circus.
 
 ## Status
-- Selected for the next-20 autonomous sprint.
-- Local-only scaffold; no upstream tracking and no publication yet.
-- Default branch remains `main`; active work happens on the repo-specific baseline branch.
-
-## Role
-- Deterministic full-parity target for the next-20 wave.
-- First tranche target is `classic-six + modern-core` with grouped fallback for later families.
+- Full dedicated `classic-six + modern-core` is implemented locally.
+- Later families are present as grouped fallback renderers.
 - Full live-provider/runtime support remains a required follow-on wave.
+- Repo-local pnpm + TypeScript bootstrap is authoritative.
 
-## Planned toolchain contract
-- Toolchain source: `repo-local-pnpm`
-- See [docs/toolchain.md](docs/toolchain.md) for exact prep commands.
+## Contract
+- `--list-values`
+- `--focus-family <family>`
+- `--output-format text|json`
+- `--seed <value>`
+- `--experimental-provider <provider>` fail-fast
+- orphan experimental flags fail fast
 
-## Current guardrail
-- Missing behavior must fail fast and be recorded in `GAPS.md`.
-- The scaffold baseline is authoritative until implementation starts.
-- Use repo-local TypeScript via pnpm; do not depend on a global tsc.
+## Local workflow
+```bash
+pnpm install
+pnpm run format:write
+pnpm run build
+pnpm run test
+node dist/src/index.js --list-values
+```
 
 ## Documentation
 - [STATUS.md](STATUS.md)
 - [PARITY.md](PARITY.md)
 - [GAPS.md](GAPS.md)
-- [docs/remotes.md](docs/remotes.md)
-- [docs/provenance.md](docs/provenance.md)
 - [docs/toolchain.md](docs/toolchain.md)
+- [docs/docker.md](docs/docker.md)
+- [docs/experimental.md](docs/experimental.md)
 - [docs/traceability/first-push-families.md](docs/traceability/first-push-families.md)

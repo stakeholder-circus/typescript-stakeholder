@@ -1,5 +1,6 @@
-# Rust Experimental Surface
+# TypeScript Experimental Surface
 
-- Live-provider concepts are modeled separately from the deterministic baseline.
-- OpenAI-compatible APIs, Anthropic APIs, and consumer-account adapters remain documentation and interface work until explicitly wired into a guarded runtime path.
-- Experimental additions must not change seeded parity fixtures by default.
+- Live-provider concepts are preserved as CLI flags and future interface work.
+- `--experimental-provider` fails fast explicitly in this tranche.
+- Orphan experimental flags fail fast and must not alter deterministic seeded output.
+- Full guarded provider/runtime wiring is deferred to the second-pass provider rollout wave.

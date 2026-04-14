@@ -1,9 +1,6 @@
 # TypeScript Gaps
 
-- `typescript-stakeholder.foundation-pending`: deterministic scaffold-only baseline exists, but runtime foundation has not started.
-- `typescript-stakeholder.classic-six-pending`: the six dedicated baseline families are not implemented yet.
-- `typescript-stakeholder.modern-core-pending`: the modern-core families are not implemented yet.
-- `typescript-stakeholder.post-modern-core-pending`: later families remain grouped fallback work.
-- `typescript-stakeholder.traceability-rows-pending`: first-push traceability rows are not populated yet.
-- `typescript-stakeholder.codeql-activation-pending`: enable only if the language is supported after publication.
-- `typescript-stakeholder.flake-lock-pending`: generate `flake.lock` once the scaffold baseline is stable.
+- `typescript-stakeholder.live-provider-runtime-pending`: full guarded live-provider/runtime support is deferred to the second-pass provider rollout wave.
+- `typescript-stakeholder.later-family-dedication-pending`: later families are intentionally grouped fallback renderers in this tranche, not dedicated renderers yet.
+- `typescript-stakeholder.publication-governance-pending`: the repo remains local-only until the publication/governance wave reaches this language.
+- `typescript-stakeholder.required-check-binding-pending`: exact GitHub required checks must only be bound after the first stable remote CI pass.

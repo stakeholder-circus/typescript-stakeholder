@@ -1,24 +1,22 @@
 # typescript-stakeholder Status
 
-- Role: selected next-20 local-only scaffold for TypeScript
+- Role: local-only deterministic parity port for the next-20 wave
 - Parity class: full-parity
-- State: scaffold-ready-local-only
-- Rewrite completeness: 12%
-- Functionality completeness: 3%
+- Phase target: dedicated `classic-six + modern-core` with grouped fallback for later families
+- Phase state: implemented-and-locally-validated
+- Phase completeness: 100%
+- Program completeness: 46%
 - Branch: `main`
 - Origin: `git@github.com:stakeholder-circus/typescript-stakeholder.git`
 - Upstream: `https://github.com/giacomo-b/rust-stakeholder`
 
-## Blockers
-- Implementation has not started.
-- Full live-provider/runtime support is deferred to the second-pass provider rollout wave.
-- Publication is blocked until the publication/governance wave completes and remote access is available.
+## Implemented now
+- Dedicated classic-six families
+- Dedicated modern-core families
+- Grouped fallback for later families
+- Deterministic same-seed normalized JSON
+- Docker build/runtime smoke and native formatter/build/test
 
-## Next
-- Keep the scaffold baseline valid.
-- Add deterministic `classic-six + modern-core` implementation in the assigned tranche.
-- Keep grouped fallback for later families until the second wave.
-
-## Canonical references
-- `/Users/davidsupan/shareholder/stakeholder-core/docs/program/index.md`
-- `/Users/davidsupan/shareholder/stakeholder-core/docs/program/next-20-wave.md`
+## Remaining
+- Full live-provider/runtime support in a second-pass wave
+- Publication/governance work and remote CI binding

@@ -10,4 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t typescript-stakeholder .
-      - run: docker run --rm typescript-stakeholder
+      - run: docker run --rm typescript-stakeholder --list-values
+      - run: docker run --rm typescript-stakeholder --focus-family delivery_preview_ops --output-format json --seed smoke
+      - run: |
+          first=$(docker run --rm typescript-stakeholder --focus-family platform_engineering --output-format json --seed same-seed)
+          second=$(docker run --rm typescript-stakeholder --focus-family platform_engineering --output-format json --seed same-seed)
+          test "$first" = "$second"
+      - run: |
+          set +e
+          docker run --rm typescript-stakeholder --experimental-provider openai-compatible 2>stderr.log
+          status=$?
+          set -e
+          test "$status" -eq 1
+          grep -q 'experimental-provider is not implemented yet in typescript-stakeholder' stderr.log
