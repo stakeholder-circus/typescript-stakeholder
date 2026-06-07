@@ -8,7 +8,7 @@ jobs:
   docker-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - run: docker build -t typescript-stakeholder .
       - run: docker run --rm typescript-stakeholder --list-values
       - run: docker run --rm typescript-stakeholder --focus-family delivery_preview_ops --output-format json --seed smoke
