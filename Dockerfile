@@ -1,7 +1,7 @@
-FROM node:22-alpine AS build
+FROM node:25-alpine AS build
 WORKDIR /app
 COPY package.json pnpm-lock.yaml tsconfig.json ./
-RUN corepack enable
+RUN npm install --global pnpm@10.15.0
 RUN pnpm install --frozen-lockfile
 COPY src ./src
 COPY test ./test
@@ -9,7 +9,7 @@ RUN pnpm run format
 RUN pnpm run build
 RUN pnpm run test
 
-FROM node:22-alpine
+FROM node:25-alpine
 WORKDIR /app
 COPY package.json ./
 COPY --from=build /app/dist ./dist
