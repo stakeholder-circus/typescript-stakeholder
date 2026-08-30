@@ -1,7 +1,7 @@
 FROM node:25-alpine AS build
 WORKDIR /app
 COPY package.json pnpm-lock.yaml tsconfig.json ./
-RUN corepack enable
+RUN npm install --global pnpm@10.15.0
 RUN pnpm install --frozen-lockfile
 COPY src ./src
 COPY test ./test
